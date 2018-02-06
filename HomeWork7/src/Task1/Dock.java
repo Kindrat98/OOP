@@ -25,9 +25,9 @@ public class Dock implements Runnable {
     @Override
     public synchronized void run() {
         int DELAY = 500;
-        while (ship.cargo > 0) {
-            ship.cargo--;
-            System.out.println(ship.getName() + " " + ship.cargo);
+        while (ship.getCargo() > 0) {
+            ship.incrementCargo();
+            System.out.println(ship.getName() + " " + ship.getCargo());
             try {
                 Thread.sleep(DELAY);
             } catch (InterruptedException e) {
